@@ -243,3 +243,101 @@ fn search_and_browse_return_structured_json() {
     assert!(payload["total"].as_u64().unwrap() >= entries.len() as u64);
     assert!(entries.iter().all(|entry| entry["category"] == "database"));
 }
+
+#[test]
+fn user_overrides_take_precedence_and_survive_update() {
+    let dir = TempDir::new().unwrap();
+    let config_dir = dir.path().join("config").join("sockbook");
+    fs::create_dir_all(&config_dir).unwrap();
+    let overrides_path = config_dir.join("overrides.json");
+    let overrides = r#"{
+        "schema": 1,
+        "entries": [{
+            "port": 5432,
+            "protos": ["tcp"],
+            "name": "postgresql",
+            "description": "local postgresql override",
+            "notes": "local"
+        }]
+    }"#;
+    fs::write(&overrides_path, overrides).unwrap();
+
+    let output = command(&dir)
+        .args(["--json", "lookup", "5432"])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let payload = parse_json(&output);
+    assert_eq!(payload["matches"][0]["tier"], "user");
+    assert_eq!(
+        payload["matches"][0]["description"],
+        "local postgresql override"
+    );
+
+    let curated = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("data/curated.json");
+    let output = command(&dir)
+        .args(["db", "update", "--file"])
+        .arg(&curated)
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "stderr: {}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert_eq!(fs::read_to_string(&overrides_path).unwrap(), overrides);
+
+    let output = command(&dir)
+        .args(["--json", "lookup", "5432"])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let payload = parse_json(&output);
+    assert_eq!(payload["matches"][0]["tier"], "user");
+}
+
+#[test]
+fn search_missing_exits_one_with_empty_json() {
+    let dir = TempDir::new().unwrap();
+    let output = command(&dir)
+        .args(["--json", "search", "zzzz-no-such-service"])
+        .output()
+        .unwrap();
+    assert_eq!(output.status.code(), Some(1));
+    let payload = parse_json(&output);
+    assert_eq!(payload["total"], 0);
+    assert!(payload["matches"].as_array().unwrap().is_empty());
+}
+
+#[test]
+fn update_json_reports_installed_path() {
+    let dir = TempDir::new().unwrap();
+    let payload_path = dir.path().join("payload.json");
+    fs::write(
+        &payload_path,
+        r#"{
+            "schema": 1,
+            "entries": [{
+                "port": 54321,
+                "protos": ["tcp"],
+                "name": "test-svc",
+                "description": "test service"
+            }]
+        }"#,
+    )
+    .unwrap();
+
+    let output = command(&dir)
+        .args(["--json", "db", "update", "--file"])
+        .arg(&payload_path)
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let payload = parse_json(&output);
+    assert_eq!(payload["updated"], true);
+    assert_eq!(payload["entries"], 1);
+    assert!(payload["path"]
+        .as_str()
+        .unwrap()
+        .ends_with("sockbook/ports.json"));
+}

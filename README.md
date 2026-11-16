@@ -41,6 +41,9 @@ touched by updates.
 The default network source is the jsDelivr mirror of this repository. Use
 `--url` to point at another HTTPS snapshot.
 
+The default source refreshes the curated overlay; the full IANA snapshot is
+compiled into the binary and changes with releases.
+
 ## Knowledge base
 
 - `data/iana.json` is generated from the IANA service-name/port registry by
@@ -51,6 +54,7 @@ The default network source is the jsDelivr mirror of this repository. Use
   8000, 8888, 9090, 9092, 9200).
 - Merge precedence is entry-level: user overrides > downloaded cache > built-in
   (curated > IANA). If a downloaded entry disappears, the built-in entry returns.
+- `browse` defaults to curated/user entries; pass `--all` to include IANA.
 
 Hints are labelled with their tier. A hint means "this port is conventionally
 used by X", not "this process is X".

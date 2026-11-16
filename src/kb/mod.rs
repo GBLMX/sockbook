@@ -575,4 +575,16 @@ mod tests {
         assert_eq!(postgres[0].category, Some(Category::Database));
         assert!(!kb.hints_for(5173, Proto::Tcp).is_empty());
     }
+
+    #[test]
+    fn update_validation_rejects_invalid_entries() {
+        let port_zero = envelope(r#"{"port":0,"protos":["tcp"],"name":"x","description":""}"#);
+        assert!(validate_envelope(&port_zero).is_err());
+
+        let bad_proto = envelope(r#"{"port":1234,"protos":["sctp"],"name":"x","description":""}"#);
+        assert!(validate_envelope(&bad_proto).is_err());
+
+        let valid = envelope(r#"{"port":1234,"protos":["tcp"],"name":"x","description":""}"#);
+        assert!(validate_envelope(&valid).is_ok());
+    }
 }

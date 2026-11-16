@@ -75,6 +75,7 @@ pub fn fetch(url: &str) -> Result<Vec<u8>> {
     let config = ureq::Agent::config_builder()
         .timeout_global(Some(Duration::from_secs(20)))
         .timeout_connect(Some(Duration::from_secs(10)))
+        .https_only(true)
         .build();
     let agent: ureq::Agent = config.into();
     let mut response = agent
