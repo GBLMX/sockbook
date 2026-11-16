@@ -1,0 +1,761 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-16T00:00:00Z",
+  "source": "hand-curated",
+  "license": "CC0-1.0",
+  "entries": [
+    {
+      "port": 22,
+      "protos": ["tcp", "udp"],
+      "name": "ssh",
+      "aliases": ["openssh", "secure-shell"],
+      "description": "Secure Shell remote login",
+      "category": "remote",
+      "homepage": "https://www.openssh.com/"
+    },
+    {
+      "port": 23,
+      "protos": ["tcp", "udp"],
+      "name": "telnet",
+      "aliases": ["telnet"],
+      "description": "Telnet remote login (unencrypted; legacy)",
+      "category": "remote"
+    },
+    {
+      "port": 25,
+      "protos": ["tcp", "udp"],
+      "name": "smtp",
+      "aliases": ["mail"],
+      "description": "Simple Mail Transfer Protocol",
+      "category": "mail"
+    },
+    {
+      "port": 53,
+      "protos": ["tcp", "udp"],
+      "name": "domain",
+      "aliases": ["dns"],
+      "description": "Domain Name System",
+      "category": "dns"
+    },
+    {
+      "port": 67,
+      "protos": ["udp"],
+      "name": "bootps",
+      "aliases": ["dhcp-server"],
+      "description": "DHCP/BOOTP server",
+      "category": "infra"
+    },
+    {
+      "port": 68,
+      "protos": ["udp"],
+      "name": "bootpc",
+      "aliases": ["dhcp-client"],
+      "description": "DHCP/BOOTP client",
+      "category": "infra"
+    },
+    {
+      "port": 80,
+      "protos": ["tcp", "udp"],
+      "name": "http",
+      "aliases": ["www", "web"],
+      "description": "World Wide Web HTTP",
+      "category": "web",
+      "homepage": "https://www.rfc-editor.org/rfc/rfc9110"
+    },
+    {
+      "port": 88,
+      "protos": ["tcp", "udp"],
+      "name": "kerberos",
+      "aliases": ["krb5"],
+      "description": "Kerberos authentication",
+      "category": "infra"
+    },
+    {
+      "port": 110,
+      "protos": ["tcp", "udp"],
+      "name": "pop3",
+      "aliases": ["pop"],
+      "description": "Post Office Protocol version 3",
+      "category": "mail"
+    },
+    {
+      "port": 111,
+      "protos": ["tcp", "udp"],
+      "name": "sunrpc",
+      "aliases": ["rpcbind", "portmapper"],
+      "description": "ONC RPC portmapper",
+      "category": "infra"
+    },
+    {
+      "port": 123,
+      "protos": ["udp"],
+      "name": "ntp",
+      "aliases": ["time"],
+      "description": "Network Time Protocol",
+      "category": "infra"
+    },
+    {
+      "port": 139,
+      "protos": ["tcp", "udp"],
+      "name": "netbios-ssn",
+      "aliases": ["netbios"],
+      "description": "NetBIOS session service",
+      "category": "file"
+    },
+    {
+      "port": 143,
+      "protos": ["tcp"],
+      "name": "imap",
+      "aliases": ["imap4"],
+      "description": "Internet Message Access Protocol",
+      "category": "mail"
+    },
+    {
+      "port": 161,
+      "protos": ["udp"],
+      "name": "snmp",
+      "aliases": ["snmp"],
+      "description": "Simple Network Management Protocol",
+      "category": "infra"
+    },
+    {
+      "port": 162,
+      "protos": ["udp"],
+      "name": "snmptrap",
+      "aliases": ["snmp-trap"],
+      "description": "SNMP trap receiver",
+      "category": "infra"
+    },
+    {
+      "port": 389,
+      "protos": ["tcp", "udp"],
+      "name": "ldap",
+      "aliases": ["ldap"],
+      "description": "Lightweight Directory Access Protocol",
+      "category": "infra"
+    },
+    {
+      "port": 443,
+      "protos": ["tcp", "udp"],
+      "name": "https",
+      "aliases": ["tls", "ssl"],
+      "description": "HTTP over TLS",
+      "category": "web",
+      "homepage": "https://www.rfc-editor.org/rfc/rfc9110"
+    },
+    {
+      "port": 445,
+      "protos": ["tcp", "udp"],
+      "name": "microsoft-ds",
+      "aliases": ["smb", "cifs"],
+      "description": "SMB/CIFS file sharing",
+      "category": "file"
+    },
+    {
+      "port": 465,
+      "protos": ["tcp"],
+      "name": "submissions",
+      "aliases": ["smtps", "smtp-tls"],
+      "description": "Message submission over TLS",
+      "category": "mail"
+    },
+    {
+      "port": 514,
+      "protos": ["udp"],
+      "name": "syslog",
+      "aliases": ["syslog"],
+      "description": "System log collection",
+      "category": "infra"
+    },
+    {
+      "port": 587,
+      "protos": ["tcp", "udp"],
+      "name": "submission",
+      "aliases": ["mail-submission"],
+      "description": "Message submission",
+      "category": "mail"
+    },
+    {
+      "port": 631,
+      "protos": ["tcp", "udp"],
+      "name": "ipp",
+      "aliases": ["cups", "printing"],
+      "description": "Internet Printing Protocol / CUPS",
+      "category": "infra"
+    },
+    {
+      "port": 636,
+      "protos": ["tcp", "udp"],
+      "name": "ldaps",
+      "aliases": ["ldap-ssl"],
+      "description": "LDAP over TLS",
+      "category": "infra"
+    },
+    {
+      "port": 993,
+      "protos": ["tcp"],
+      "name": "imaps",
+      "aliases": ["imap-ssl"],
+      "description": "IMAP over TLS",
+      "category": "mail"
+    },
+    {
+      "port": 995,
+      "protos": ["tcp", "udp"],
+      "name": "pop3s",
+      "aliases": ["pop3-ssl"],
+      "description": "POP3 over TLS",
+      "category": "mail"
+    },
+    {
+      "port": 1080,
+      "protos": ["tcp", "udp"],
+      "name": "socks",
+      "aliases": ["socks5", "proxy"],
+      "description": "SOCKS proxy",
+      "category": "infra"
+    },
+    {
+      "port": 1194,
+      "protos": ["tcp", "udp"],
+      "name": "openvpn",
+      "aliases": ["vpn"],
+      "description": "OpenVPN default port",
+      "category": "vpn",
+      "homepage": "https://openvpn.net/"
+    },
+    {
+      "port": 1883,
+      "protos": ["tcp", "udp"],
+      "name": "mqtt",
+      "aliases": ["mosquitto"],
+      "description": "MQTT broker",
+      "category": "queue",
+      "homepage": "https://mqtt.org/"
+    },
+    {
+      "port": 2049,
+      "protos": ["tcp", "udp"],
+      "name": "nfs",
+      "aliases": ["nfs"],
+      "description": "Network File System",
+      "category": "file"
+    },
+    {
+      "port": 2181,
+      "protos": ["tcp"],
+      "name": "zookeeper",
+      "aliases": ["zk"],
+      "description": "Apache ZooKeeper client port",
+      "category": "infra",
+      "homepage": "https://zookeeper.apache.org/"
+    },
+    {
+      "port": 2375,
+      "protos": ["tcp"],
+      "name": "docker",
+      "aliases": ["docker-api"],
+      "description": "Docker Engine API (plaintext; keep bound to localhost)",
+      "category": "container",
+      "homepage": "https://docs.docker.com/engine/api/"
+    },
+    {
+      "port": 2376,
+      "protos": ["tcp"],
+      "name": "docker-s",
+      "aliases": ["docker-tls"],
+      "description": "Docker Engine API over TLS",
+      "category": "container",
+      "homepage": "https://docs.docker.com/engine/api/"
+    },
+    {
+      "port": 2379,
+      "protos": ["tcp"],
+      "name": "etcd-client",
+      "aliases": ["etcd"],
+      "description": "etcd client communication",
+      "category": "infra",
+      "homepage": "https://etcd.io/"
+    },
+    {
+      "port": 2380,
+      "protos": ["tcp"],
+      "name": "etcd-server",
+      "aliases": ["etcd-peer"],
+      "description": "etcd server-to-server communication",
+      "category": "infra",
+      "homepage": "https://etcd.io/"
+    },
+    {
+      "port": 3000,
+      "protos": ["tcp"],
+      "name": "node-dev",
+      "aliases": ["node", "react", "next-dev"],
+      "description": "Common Node.js/React development server port",
+      "category": "devtool",
+      "notes": "IANA registers hbci and remoteware-cl on this port; dev servers are the common de-facto use."
+    },
+    {
+      "port": 3000,
+      "protos": ["tcp"],
+      "name": "grafana",
+      "aliases": ["grafana-http"],
+      "description": "Grafana default HTTP port",
+      "category": "monitoring",
+      "homepage": "https://grafana.com/",
+      "notes": "Also widely used by Node.js/React development servers."
+    },
+    {
+      "port": 3001,
+      "protos": ["tcp"],
+      "name": "node-dev-alt",
+      "aliases": ["next-dev-alt"],
+      "description": "Alternate Node.js development server port",
+      "category": "devtool"
+    },
+    {
+      "port": 3128,
+      "protos": ["tcp"],
+      "name": "squid",
+      "aliases": ["http-proxy", "proxy"],
+      "description": "Squid HTTP proxy default port",
+      "category": "infra",
+      "homepage": "http://www.squid-cache.org/"
+    },
+    {
+      "port": 3306,
+      "protos": ["tcp", "udp"],
+      "name": "mysql",
+      "aliases": ["mariadb"],
+      "description": "MySQL/MariaDB database",
+      "category": "database",
+      "homepage": "https://www.mysql.com/"
+    },
+    {
+      "port": 3389,
+      "protos": ["tcp", "udp"],
+      "name": "rdp",
+      "aliases": ["ms-wbt-server", "remote-desktop"],
+      "description": "Microsoft Remote Desktop Protocol",
+      "category": "remote"
+    },
+    {
+      "port": 4200,
+      "protos": ["tcp"],
+      "name": "angular",
+      "aliases": ["ng-serve"],
+      "description": "Angular CLI development server default port",
+      "category": "devtool",
+      "homepage": "https://angular.dev/"
+    },
+    {
+      "port": 5000,
+      "protos": ["tcp"],
+      "name": "dev-server",
+      "aliases": ["flask", "python-dev"],
+      "description": "Common Python/Flask development server port",
+      "category": "devtool",
+      "notes": "Docker Registry also uses 5000; IANA registers commplex-main."
+    },
+    {
+      "port": 5005,
+      "protos": ["tcp"],
+      "name": "jdwp",
+      "aliases": ["java-debug"],
+      "description": "Java Debug Wire Protocol (JDWP) default port",
+      "category": "devtool"
+    },
+    {
+      "port": 5173,
+      "protos": ["tcp"],
+      "name": "vite",
+      "aliases": ["vite-dev"],
+      "description": "Vite development server default port",
+      "category": "devtool",
+      "homepage": "https://vite.dev/"
+    },
+    {
+      "port": 5353,
+      "protos": ["tcp", "udp"],
+      "name": "mdns",
+      "aliases": ["zeroconf", "bonjour"],
+      "description": "Multicast DNS",
+      "category": "dns"
+    },
+    {
+      "port": 5355,
+      "protos": ["tcp", "udp"],
+      "name": "llmnr",
+      "aliases": ["llmnr"],
+      "description": "Link-Local Multicast Name Resolution",
+      "category": "dns"
+    },
+    {
+      "port": 5432,
+      "protos": ["tcp", "udp"],
+      "name": "postgresql",
+      "aliases": ["postgres", "psql"],
+      "description": "PostgreSQL database",
+      "category": "database",
+      "homepage": "https://www.postgresql.org/"
+    },
+    {
+      "port": 5601,
+      "protos": ["tcp"],
+      "name": "kibana",
+      "aliases": ["kibana-http"],
+      "description": "Kibana web UI",
+      "category": "monitoring",
+      "homepage": "https://www.elastic.co/kibana",
+      "notes": "IANA registers esmagent on this port."
+    },
+    {
+      "port": 5672,
+      "protos": ["tcp", "udp"],
+      "name": "amqp",
+      "aliases": ["rabbitmq"],
+      "description": "AMQP / RabbitMQ broker",
+      "category": "queue",
+      "homepage": "https://www.rabbitmq.com/"
+    },
+    {
+      "port": 5900,
+      "protos": ["tcp", "udp"],
+      "name": "vnc",
+      "aliases": ["rfb", "vnc-server"],
+      "description": "VNC remote framebuffer server",
+      "category": "remote"
+    },
+    {
+      "port": 6000,
+      "protos": ["tcp"],
+      "name": "x11",
+      "aliases": ["x11-display"],
+      "description": "X11 display server (6000 + display number)",
+      "category": "remote"
+    },
+    {
+      "port": 6006,
+      "protos": ["tcp"],
+      "name": "tensorboard",
+      "aliases": ["tensorboard-dev"],
+      "description": "TensorBoard default port",
+      "category": "devtool",
+      "homepage": "https://www.tensorflow.org/tensorboard"
+    },
+    {
+      "port": 6379,
+      "protos": ["tcp"],
+      "name": "redis",
+      "aliases": ["redis-server"],
+      "description": "Redis key/value store",
+      "category": "cache",
+      "homepage": "https://redis.io/"
+    },
+    {
+      "port": 6380,
+      "protos": ["tcp"],
+      "name": "redis-alt",
+      "aliases": ["redis-tls"],
+      "description": "Alternate Redis port (often TLS)",
+      "category": "cache"
+    },
+    {
+      "port": 6443,
+      "protos": ["tcp"],
+      "name": "kubernetes-api",
+      "aliases": ["k8s-api"],
+      "description": "Kubernetes API server",
+      "category": "container",
+      "homepage": "https://kubernetes.io/",
+      "notes": "IANA registers sun-sr-https on this port."
+    },
+    {
+      "port": 8000,
+      "protos": ["tcp"],
+      "name": "dev-http",
+      "aliases": ["http-dev", "python-http-server"],
+      "description": "Common local development HTTP server port",
+      "category": "devtool",
+      "notes": "IANA registers iRDMI on this port; unrelated to dev usage."
+    },
+    {
+      "port": 8080,
+      "protos": ["tcp", "udp"],
+      "name": "http-alt",
+      "aliases": ["http-proxy", "web-alt"],
+      "description": "HTTP alternate / local web proxy",
+      "category": "web"
+    },
+    {
+      "port": 8086,
+      "protos": ["tcp"],
+      "name": "influxdb",
+      "aliases": ["influx"],
+      "description": "InfluxDB HTTP API",
+      "category": "database",
+      "homepage": "https://www.influxdata.com/",
+      "notes": "IANA registers d-s-n on this port."
+    },
+    {
+      "port": 8123,
+      "protos": ["tcp"],
+      "name": "clickhouse-http",
+      "aliases": ["clickhouse"],
+      "description": "ClickHouse HTTP interface",
+      "category": "database",
+      "homepage": "https://clickhouse.com/"
+    },
+    {
+      "port": 8200,
+      "protos": ["tcp"],
+      "name": "vault",
+      "aliases": ["hashicorp-vault"],
+      "description": "HashiCorp Vault HTTP API",
+      "category": "infra",
+      "homepage": "https://www.vaultproject.io/"
+    },
+    {
+      "port": 8443,
+      "protos": ["tcp"],
+      "name": "https-alt",
+      "aliases": ["https-alt"],
+      "description": "HTTPS alternate port",
+      "category": "web"
+    },
+    {
+      "port": 8500,
+      "protos": ["tcp"],
+      "name": "consul-http",
+      "aliases": ["consul"],
+      "description": "HashiCorp Consul HTTP API",
+      "category": "infra",
+      "homepage": "https://www.consul.io/"
+    },
+    {
+      "port": 8883,
+      "protos": ["tcp"],
+      "name": "secure-mqtt",
+      "aliases": ["mqtts", "mqtt-tls"],
+      "description": "MQTT over TLS",
+      "category": "queue"
+    },
+    {
+      "port": 8888,
+      "protos": ["tcp"],
+      "name": "jupyter",
+      "aliases": ["jupyter-notebook", "jupyter-lab"],
+      "description": "Jupyter Notebook/Lab default port",
+      "category": "devtool",
+      "homepage": "https://jupyter.org/",
+      "notes": "IANA registers ddi-tcp-1 on this port."
+    },
+    {
+      "port": 9042,
+      "protos": ["tcp"],
+      "name": "cassandra",
+      "aliases": ["cql"],
+      "description": "Apache Cassandra CQL native transport",
+      "category": "database",
+      "homepage": "https://cassandra.apache.org/"
+    },
+    {
+      "port": 9090,
+      "protos": ["tcp"],
+      "name": "prometheus",
+      "aliases": ["prometheus-http"],
+      "description": "Prometheus web UI/API",
+      "category": "monitoring",
+      "homepage": "https://prometheus.io/",
+      "notes": "IANA registers websm on this port."
+    },
+    {
+      "port": 9091,
+      "protos": ["tcp"],
+      "name": "pushgateway",
+      "aliases": ["prometheus-pushgateway"],
+      "description": "Prometheus Pushgateway",
+      "category": "monitoring",
+      "homepage": "https://github.com/prometheus/pushgateway"
+    },
+    {
+      "port": 9092,
+      "protos": ["tcp"],
+      "name": "kafka",
+      "aliases": ["kafka-broker"],
+      "description": "Apache Kafka broker",
+      "category": "queue",
+      "homepage": "https://kafka.apache.org/",
+      "notes": "IANA registers XmlIpcRegSvc on this port."
+    },
+    {
+      "port": 9093,
+      "protos": ["tcp"],
+      "name": "alertmanager",
+      "aliases": ["alertmanager-http"],
+      "description": "Prometheus Alertmanager",
+      "category": "monitoring",
+      "homepage": "https://prometheus.io/docs/alerting/latest/alertmanager/",
+      "notes": "IANA registers copycat on this port."
+    },
+    {
+      "port": 9100,
+      "protos": ["tcp"],
+      "name": "node-exporter",
+      "aliases": ["prometheus-node-exporter"],
+      "description": "Prometheus node exporter",
+      "category": "monitoring",
+      "homepage": "https://github.com/prometheus/node_exporter"
+    },
+    {
+      "port": 9200,
+      "protos": ["tcp"],
+      "name": "elasticsearch",
+      "aliases": ["elasticsearch-http"],
+      "description": "Elasticsearch HTTP API",
+      "category": "database",
+      "homepage": "https://www.elastic.co/elasticsearch/",
+      "notes": "IANA registers wap-wsp on this port."
+    },
+    {
+      "port": 9229,
+      "protos": ["tcp"],
+      "name": "node-inspector",
+      "aliases": ["node-debug"],
+      "description": "Node.js inspector default port",
+      "category": "devtool",
+      "homepage": "https://nodejs.org/"
+    },
+    {
+      "port": 9300,
+      "protos": ["tcp"],
+      "name": "elasticsearch-transport",
+      "aliases": ["elasticsearch-node"],
+      "description": "Elasticsearch transport port",
+      "category": "database",
+      "notes": "IANA registers vrace on this port."
+    },
+    {
+      "port": 9418,
+      "protos": ["tcp", "udp"],
+      "name": "git",
+      "aliases": ["git-daemon"],
+      "description": "Git native protocol / git daemon",
+      "category": "devtool",
+      "homepage": "https://git-scm.com/"
+    },
+    {
+      "port": 10250,
+      "protos": ["tcp"],
+      "name": "kubelet-api",
+      "aliases": ["kubelet"],
+      "description": "Kubernetes kubelet API",
+      "category": "container",
+      "homepage": "https://kubernetes.io/"
+    },
+    {
+      "port": 10255,
+      "protos": ["tcp"],
+      "name": "kubelet-readonly",
+      "aliases": ["kubelet-ro"],
+      "description": "Kubernetes kubelet read-only port (legacy)",
+      "category": "container"
+    },
+    {
+      "port": 11211,
+      "protos": ["tcp", "udp"],
+      "name": "memcache",
+      "aliases": ["memcached"],
+      "description": "Memcached",
+      "category": "cache",
+      "homepage": "https://memcached.org/"
+    },
+    {
+      "port": 11434,
+      "protos": ["tcp"],
+      "name": "ollama",
+      "aliases": ["ollama-api"],
+      "description": "Ollama local model API",
+      "category": "devtool",
+      "homepage": "https://ollama.com/"
+    },
+    {
+      "port": 15672,
+      "protos": ["tcp"],
+      "name": "rabbitmq-management",
+      "aliases": ["rabbitmq-mgmt"],
+      "description": "RabbitMQ management UI",
+      "category": "queue",
+      "homepage": "https://www.rabbitmq.com/management.html"
+    },
+    {
+      "port": 16379,
+      "protos": ["tcp"],
+      "name": "redis-cluster",
+      "aliases": ["redis-cluster-bus"],
+      "description": "Redis Cluster bus port",
+      "category": "cache"
+    },
+    {
+      "port": 26257,
+      "protos": ["tcp"],
+      "name": "cockroach",
+      "aliases": ["cockroachdb"],
+      "description": "CockroachDB SQL port",
+      "category": "database",
+      "homepage": "https://www.cockroachlabs.com/"
+    },
+    {
+      "port": 26379,
+      "protos": ["tcp"],
+      "name": "redis-sentinel",
+      "aliases": ["sentinel"],
+      "description": "Redis Sentinel port",
+      "category": "cache"
+    },
+    {
+      "port": 27017,
+      "protos": ["tcp"],
+      "name": "mongodb",
+      "aliases": ["mongo"],
+      "description": "MongoDB database",
+      "category": "database",
+      "homepage": "https://www.mongodb.com/"
+    },
+    {
+      "port": 33060,
+      "protos": ["tcp"],
+      "name": "mysqlx",
+      "aliases": ["mysql-x-protocol"],
+      "description": "MySQL X Protocol",
+      "category": "database"
+    },
+    {
+      "port": 51820,
+      "protos": ["udp"],
+      "name": "wireguard",
+      "aliases": ["wg"],
+      "description": "WireGuard default port",
+      "category": "vpn",
+      "homepage": "https://www.wireguard.com/"
+    },
+    {
+      "port": 61616,
+      "protos": ["tcp"],
+      "name": "activemq",
+      "aliases": ["activemq-openwire"],
+      "description": "ActiveMQ OpenWire",
+      "category": "queue",
+      "homepage": "https://activemq.apache.org/"
+    },
+    {
+      "port": 63342,
+      "protos": ["tcp"],
+      "name": "jetbrains-ide",
+      "aliases": ["clion", "intellij", "webstorm"],
+      "description": "JetBrains IDE built-in web server / debug port",
+      "category": "devtool",
+      "homepage": "https://www.jetbrains.com/"
+    }
+  ]
+}
