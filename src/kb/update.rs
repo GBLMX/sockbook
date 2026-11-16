@@ -1,13 +1,15 @@
 use std::fs;
 use std::io::Write;
 use std::path::{Path, PathBuf};
+#[cfg(feature = "web")]
+use std::time::Duration;
 
 use crate::error::{Error, Result};
 use crate::kb::{parse_envelope, validate_envelope, Envelope};
 use crate::paths;
 
 pub const DEFAULT_UPDATE_URL: &str =
-    "https://raw.githubusercontent.com/GBLMX/sockbook/main/data/curated.json";
+    "https://fastly.jsdelivr.net/gh/GBLMX/sockbook@main/data/curated.json";
 
 const MAX_BYTES: usize = 4 * 1024 * 1024;
 const MAX_ENTRIES: usize = 20_000;
@@ -70,7 +72,17 @@ pub fn fetch(url: &str) -> Result<Vec<u8>> {
             "update URL must use https://; use --file for local payloads".to_string(),
         ));
     }
-    let mut response = ureq::get(url)
+    let config = ureq::Agent::config_builder()
+        .timeout_global(Some(Duration::from_secs(20)))
+        .timeout_connect(Some(Duration::from_secs(10)))
+        .build();
+    let agent: ureq::Agent = config.into();
+    let mut response = agent
+        .get(url)
+        .header(
+            "User-Agent",
+            concat!("sockbook/", env!("CARGO_PKG_VERSION")),
+        )
         .call()
         .map_err(|err| Error::Http(err.to_string()))?;
     let bytes = response

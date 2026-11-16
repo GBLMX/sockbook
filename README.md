@@ -38,6 +38,9 @@ validates the payload and writes it atomically to
 User overrides live in `$XDG_CONFIG_HOME/sockbook/overrides.json` and are never
 touched by updates.
 
+The default network source is the jsDelivr mirror of this repository. Use
+`--url` to point at another HTTPS snapshot.
+
 ## Knowledge base
 
 - `data/iana.json` is generated from the IANA service-name/port registry by
